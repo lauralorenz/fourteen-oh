@@ -33,15 +33,16 @@ flow.register("14-demo")
 # agent #
 #########
 
-from prefect.agent.ecs.agent import ECSAgent
+if __name__ == '__main__':
+	from prefect.agent.ecs.agent import ECSAgent
 
-AGENT = ECSAgent(#labels=["s3-flow-storage"],
-	#cpu="256", 
-	#memory="512",
-	cluster="prefect-demo-cluster", 
-	#networkConfiguration={'awsvpcConfiguration': {'assignPublicIp': 'ENABLED', 'subnets': ['subnet-7410175c'], 'securityGroups': []}}, 
-	task_role_arn="arn:aws:iam::136638793011:role/prefect-demo-fargate-task-role",
- 	#executionRoleArn="arn:aws:iam::136638793011:role/ecsTaskExecutionRole"
- 	)
+	AGENT = ECSAgent(#labels=["s3-flow-storage"],
+		#cpu="256", 
+		#memory="512",
+		cluster="prefect-demo-cluster", 
+		#networkConfiguration={'awsvpcConfiguration': {'assignPublicIp': 'ENABLED', 'subnets': ['subnet-7410175c'], 'securityGroups': []}}, 
+		task_role_arn="arn:aws:iam::136638793011:role/prefect-demo-fargate-task-role",
+	 	#executionRoleArn="arn:aws:iam::136638793011:role/ecsTaskExecutionRole"
+	 	)
 
-AGENT.start()
+	AGENT.start()
