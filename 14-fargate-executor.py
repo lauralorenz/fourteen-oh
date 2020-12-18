@@ -15,7 +15,7 @@ RUN_CONFIG = ECSRun(
  		#"executionRoleArn": "arn:aws:iam::136638793011:role/ecsTaskExecutionRole"
  		},
 	task_role_arn="arn:aws:iam::136638793011:role/prefect-demo-fargate-task-role",
-	#image='prefecthq/prefect:all_extras-0.13.19',
+	image='prefecthq/prefect:all_extras-0.14.0',
 	memory="512", 
 	cpu="256")
 
