@@ -15,13 +15,13 @@ RUN_CONFIG = ECSRun(
  		#"executionRoleArn": "arn:aws:iam::136638793011:role/ecsTaskExecutionRole"
  		},
 	task_role_arn="arn:aws:iam::136638793011:role/prefect-demo-fargate-task-role",
-	image='prefecthq/prefect:all_extras-0.14.0',
+	image='prefecthq/prefect:all_extras',
 	memory="512", 
 	cpu="256")
 
 EXECUTOR = DaskExecutor(
     cluster_class="dask_cloudprovider.aws.FargateCluster",
-    cluster_kwargs={"n_workers": 4, "image": 'prefecthq/prefect:all_extras-0.14.0'})
+    cluster_kwargs={"n_workers": 4, "image": 'prefecthq/prefect:all_extras'})
 
 
 @task
