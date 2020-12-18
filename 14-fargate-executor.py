@@ -19,9 +19,7 @@ RUN_CONFIG = ECSRun(
 	memory="512", 
 	cpu="256")
 
-EXECUTOR = DaskExecutor(
-    cluster_class="dask_cloudprovider.aws.FargateCluster",
-    cluster_kwargs={"n_workers": 4, "image": 'prefecthq/prefect:0.14.0'})
+EXECUTOR = DaskExecutor()
 
 
 @task
