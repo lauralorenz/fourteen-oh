@@ -3,7 +3,7 @@ from prefect.run_configs import ECSRun
 from prefect import task, Flow, Parameter
 import prefect
 
-STORAGE = GitHub(repo="lauralorenz/fourteen-oh", path="/14-fargate.py")
+STORAGE = GitHub(repo="lauralorenz/fourteen-oh", ref="main", path="/14-fargate.py")
 
 RUN_CONFIG = ECSRun(
 	run_task_kwargs={
